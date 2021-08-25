@@ -45,7 +45,6 @@ class LinkedList {
             System.out.println("List is Empty");
             return;
         } else {
-
             while (current != null) {
                 System.out.print(current.data + " ");
                 current = current.next;
