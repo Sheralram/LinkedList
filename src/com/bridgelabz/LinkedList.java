@@ -15,9 +15,20 @@ class LinkedList {
             this.head = newnode;
             this.tail = newnode;
         } else {
+
             tail.next=newnode;
             tail=newnode;
         }
+    }
+    public void insert(Node previousNode, int data) {
+        if (previousNode == null) {
+            System.out.println("previous node can't be empty");
+            return;
+        }
+        Node newNode = new Node(data);
+        newNode.next = previousNode.next;
+        previousNode.next = newNode;
+
     }
 
     public void display() {
