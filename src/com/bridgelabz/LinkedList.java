@@ -31,13 +31,21 @@ class LinkedList {
 
     }
 
+    public void pop(){
+        if(head==null){
+            System.out.println("List is Empty and Can't be delete");
+        }
+        System.out.println("Deleting the first element");
+        head=head.next;
+    }
+
     public void display() {
         Node current = head;
         if (head == null) {
             System.out.println("List is Empty");
             return;
         } else {
-            System.out.println("Nodes of singly linked list:");
+
             while (current != null) {
                 System.out.print(current.data + " ");
                 current = current.next;
