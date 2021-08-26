@@ -9,15 +9,15 @@ class LinkedList {
     Node head;
 
     public void add(int data) {
-        Node newnode = new Node(data);
+        Node newNode = new Node(data);
         if (head == null) {
-            this.node = newnode;
-            this.head = newnode;
-            this.tail = newnode;
+            this.node = newNode;
+            this.head = newNode;
+            this.tail = newNode;
         } else {
 
-            tail.next=newnode;
-            tail=newnode;
+            tail.next = newNode;
+            tail = newNode;
         }
     }
     public void insert(Node previousNode, int data) {
@@ -32,7 +32,7 @@ class LinkedList {
     }
 
     public void pop(){
-        if(head==null){
+        if(head == null){
             System.out.println("List is Empty and Can't be delete");
         }
         System.out.println("Deleting the first element");
@@ -53,5 +53,28 @@ class LinkedList {
         }
     }
 
+public void searchNode(int data){
+       Node current = head;
+        int count = 1;
+       boolean flag = false;
+    if(head == null) {
+        System.out.println("List is empty. Please add input then Search Element");
+    }
+    else {
+        while (current != null) {
+            if (current.data == data) {
+                flag = true;
+                break;
+            }
+            count = count + 1;
+            current = current.next;
+        }
+    }
+    if(flag)
+        System.out.println("Element "+data+ " is present in the list at the position : " + count);
+    else
+        System.out.println("Element is not present in the list");
+
+    }
 
 }
