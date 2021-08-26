@@ -8,7 +8,7 @@ class LinkedList {
     Node tail;
     Node head;
 
-    public void add(int data) {
+    public void addNode(int data) {
         Node newNode = new Node(data);
         if (head == null) {
             this.node = newNode;
@@ -20,7 +20,7 @@ class LinkedList {
             tail = newNode;
         }
     }
-    public void insert(Node previousNode, int data) {
+    public void insertNode(Node previousNode, int data) {
         if (previousNode == null) {
             System.out.println("previous node can't be empty");
             return;
@@ -31,7 +31,7 @@ class LinkedList {
 
     }
 
-    public void pop(){
+    public void popNode(){
         if(head == null){
             System.out.println("List is Empty and Can't be delete");
         }
@@ -39,7 +39,7 @@ class LinkedList {
         head=head.next;
     }
 
-    public void display() {
+    public void displayNode() {
         Node current = head;
         if (head == null) {
             System.out.println("List is Empty");
@@ -74,6 +74,37 @@ public void searchNode(int data){
         System.out.println("Element "+data+ " is present in the list at the position : " + count);
     else
         System.out.println("Element is not present in the list");
+
+    }
+    public void deleteNode(int key) {
+        Node temp = head, prev = null;
+
+        // If head node itself holds the key to be deleted
+        if (temp != null && temp.data == key) {
+            head = temp.next; // Changed head
+            return;
+        }
+
+        while (temp != null && temp.data != key) {
+            prev = temp;
+            temp = temp.next;
+        }
+
+        // If key was not present in linked list
+        if (temp == null)
+            return;
+
+        // Unlink the node from linked list
+        prev.next = temp.next;
+    }
+    public void size(){
+        Node temp=head;
+        int count=0;
+        while(temp!=null){
+            count++;
+            temp=temp.next;
+        }
+        System.out.println("\nsize of the linkedlist is "+count);
 
     }
 
