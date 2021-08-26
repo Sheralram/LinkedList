@@ -24,6 +24,9 @@ public class LinkedListMain {
         list.deleteNode(40);
         list.displayNode();
         list.size();
+        list.sortNode();
+        System.out.println("Node is sorted in Ascending order");
+        list.displayNode();
         
     }
 }
